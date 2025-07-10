@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #fc466b, #3f5efb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.weather-app {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  width: 360px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 1px 1px #00000033;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  box-shadow: inset 2px 2px 5px rgba(255,255,255,0.2),
+              inset -2px -2px 5px rgba(0,0,0,0.1);
+}
+
+input::placeholder {
+  color: #ddd;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  background: linear-gradient(to right, #00f2fe, #4facfe);
+  border-radius: 15px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.weather-card {
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.weather-card img {
+  width: 80px;
+  margin: 10px auto;
+}
+
+.weather-card p {
+  margin: 6px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
