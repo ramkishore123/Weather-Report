@@ -1,8 +1,8 @@
 async function getWeather() {
   const cityInput = document.getElementById('cityInput');
   const city = cityInput.value.trim();
-  const apiKey = '0f3ea7d4be6d4fc49bb65618250807';
-  const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
+  const apiKey = '0f3ea7d4be6d4fc49bb65618250807';  // ⚠️ Avoid exposing in production
+  const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
 
   const weatherContainer = document.getElementById('weatherContainer');
   const loadingText = document.getElementById('loadingText');
@@ -34,13 +34,13 @@ async function getWeather() {
       return;
     }
 
-    // Display data
-    // document.getElementById('cityName').textContent = `${data.location.name}, ${data.location.country}`;
-    // document.getElementById('temp').textContent = `🌡️ ${data.current.temp_c}°C`;
-    // document.getElementById('condition').textContent = `📋 ${data.current.condition.text}`;
-    // document.getElementById('humidity').textContent = `💧 Humidity: ${data.current.humidity}%`;
-    // document.getElementById('wind').textContent = `🌬️ Wind: ${data.current.wind_kph} kph`;
-    // document.getElementById('weatherIcon').src = "https:" + data.current.condition.icon;
+    // Display weather data
+    document.getElementById('cityName').textContent = `${data.location.name}, ${data.location.country}`;
+    document.getElementById('temp').textContent = `🌡️ ${data.current.temp_c}°C`;
+    document.getElementById('condition').textContent = `📋 ${data.current.condition.text}`;
+    document.getElementById('humidity').textContent = `💧 Humidity: ${data.current.humidity}%`;
+    document.getElementById('wind').textContent = `🌬️ Wind: ${data.current.wind_kph} kph`;
+    document.getElementById('weatherIcon').src = "https:" + data.current.condition.icon;
 
     loadingText.textContent = '';
     weatherContainer.classList.remove('hidden');
